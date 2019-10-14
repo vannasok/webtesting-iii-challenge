@@ -11,4 +11,12 @@ describe('<Dashboard />', () => {
 
       expect(tree.toJSON()).toMatchSnapshot();
    });
+
+   it('render controls & display', () => {
+      const { getByText } = render(<Dashboard />);
+      getByText(/unlocked/i);
+      getByText(/lock gate/i);
+      getByText(/open/i);
+      getByText(/close gate/i);
+   });
 });
